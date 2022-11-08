@@ -3,3 +3,8 @@
 // went back to activity 25 and 26 for reference
 var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
 $("#current-time").text(time);
+
+//need time to update dynamically instead of on page refresh
+
+
+
