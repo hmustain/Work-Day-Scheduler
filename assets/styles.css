@@ -65,9 +65,14 @@ body {
     color: white;
   }
   
-  #enter-btn, #erase-btn i:hover {
+  #enter-btn:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
+  }
+
+  #erase-btn:hover {
+    font-size: 20px;
+    transition: all 0.3s ease-in-out
   }
 
   #enter-btn:active, #erase-btn:active {
