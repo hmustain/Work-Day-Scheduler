@@ -27,9 +27,12 @@ if (hour < currentHour) {
       console.log("true");
 } else { console.log("false")};
 
+$(function() {
 if (hour < currentHour) {
-    $(this).addClass(".past");
-}
+    $(hour).addClass(".past");
+    console.log("my function is not working");
+}});
+
 // expected thing for this to do would be if hour (which is 8 is less than current hour which is 11 is true then make the background color for that item black why is this not working?)
 
 console.log(hour);
