@@ -29,13 +29,13 @@ if (hour < currentHour) {
 
 $(function() {
 if (hour < currentHour) {
-    $(hour).addClass(".past");
+    $(eightHr).addClass("past");
     console.log("my function is not working");
 }});
 
-// expected thing for this to do would be if hour (which is 8 is less than current hour which is 11 is true then make the background color for that item black why is this not working?)
+// when adding using add.class jquery already know it's a class so do not have to put the ".past" instead put "past"
 
-console.log(hour);
+console.log("the time for variable hour is " + hour);
 // ^ expected value is "8"
 
 // console.log(eightHr.attr('id'));
