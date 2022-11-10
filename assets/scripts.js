@@ -68,6 +68,8 @@ hour16,
 hour17];
 
 // create for loop with if else statements inside
+
+function timeUpdate() {
 for (let i = 0; i < timeBlocks.length; i++) {
     if (timeBlocks[i] < currentHour) {
         $(hours).addClass("past");
@@ -80,11 +82,12 @@ for (let i = 0; i < timeBlocks.length; i++) {
         $(hours).addClass("present");
         $(hours).removeClass("future");
     }
-    else (timeBlocks[i] > currentHour) 
+    else {
         $(hours).removeClass("past");
         $(hours).removeClass("present");
         $(hours).addClass("future");
-    };
+    }}};
+timeUpdate();
 
 // $(function() {
 // if (hour8 < currentHour) {
