@@ -67,6 +67,21 @@ var timeBlocks = [hour8,
     hour16,
     hour17];
 
+// work on local storage.. looking at week 4 act 24
+var enterBtn = document.querySelector("#enter-btn");
+var eraseBtn = document.querySelector("#erase-btn");
+var hour8Input = document.querySelector("#hour-8");
+
+enterBtn.addEventListener("click", function(event) {
+    event.preventDefault();
+
+
+var userInput = {
+    eightam: hour8Input.value.trim()
+};
+
+localStorage.setItem("user input", JSON.stringify(userInput))});
+
 // create for loop with if else statements inside using [i] to index through each line in the array
 
 function timeUpdate() {
