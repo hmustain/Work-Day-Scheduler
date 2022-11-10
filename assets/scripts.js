@@ -10,10 +10,10 @@ console.log("the current hours is " + currentHour);
 
 //need time to update dynamically instead of on page refresh
 // asked bcs helped me here
-setInterval(function(){
+setInterval(function () {
     var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
     $("#current-time").text(time);
-    }, 1000);
+}, 1000);
 
 // for tomorrow
 // 1st try to see if we can get the first time block to change colors
@@ -43,7 +43,7 @@ var id14 = $(fourteenthHr).attr('id');
 var id15 = $(fifteenthHr).attr('id');
 var id16 = $(sixteenthHr).attr('id');
 var id17 = $(seventeenthHr).attr('id');
-// creating a new variable ot just show the number instead of the word hour. this way i can start comparing each variable to current time
+// creating a new variable to just show the number instead of the word hour. this way i can start comparing each variable to current time
 var hour8 = id8.split('-')[1];
 var hour9 = id9.split('-')[1];
 var hour10 = id10.split('-')[1];
@@ -56,51 +56,40 @@ var hour16 = id16.split('-')[1];
 var hour17 = id17.split('-')[1];
 
 // create an array
-var timeBlocks = [ hour8,
-hour9,
-hour10,
-hour11,
-hour12,
-hour13,
-hour14,
-hour15,
-hour16,
-hour17];
+var timeBlocks = [hour8,
+    hour9,
+    hour10,
+    hour11,
+    hour12,
+    hour13,
+    hour14,
+    hour15,
+    hour16,
+    hour17];
 
-// create for loop with if else statements inside
+// create for loop with if else statements inside using [i] to index through each line in the array
 
 function timeUpdate() {
-for (let i = 0; i < timeBlocks.length; i++) {
-    console.log("timeBlock: type", typeof(timeBlocks[i]))
-    if (timeBlocks[i] < currentHour) {
-        $(hours[i]).addClass("past");
-        $(hours[i]).removeClass("present");
-        $(hours[i]).removeClass("future");
-        
+    for (let i = 0; i < timeBlocks.length; i++) {
+        if (timeBlocks[i] < currentHour) {
+            $(hours[i]).addClass("past");
+            $(hours[i]).removeClass("present");
+            $(hours[i]).removeClass("future");
+
+        }
+        else if (timeBlocks[i] == currentHour) {
+            $(hours[i]).removeClass("past");
+            $(hours[i]).addClass("present");
+            $(hours[i]).removeClass("future");
+        }
+        else {
+            $(hours[i]).removeClass("past");
+            $(hours[i]).removeClass("present");
+            $(hours[i]).addClass("future");
+        }
     }
-    else if (timeBlocks[i] == currentHour) {
-        $(hours[i]).removeClass("past");
-        $(hours[i]).addClass("present");
-        $(hours[i]).removeClass("future");
-    }
-    else {
-        $(hours[i]).removeClass("past");
-        $(hours[i]).removeClass("present");
-        $(hours[i]).addClass("future");
-    }}};
+};
 timeUpdate();
-
-// $(function() {
-// if (hour8 < currentHour) {
-//     $(eightHr).addClass("past");
-//     console.log("my function is not working");
-// } else if (hour8 = currentHour) {
-//     $(eightHr).addClass("present");
-
-// } else if (hour17 > currentHour) {
-//     $(seventeenthHr).addClass("future");
-// }
-// });
 
 // when adding using add.class jquery already know it's a class so do not have to put the ".past" instead put "past"
 
@@ -125,15 +114,15 @@ console.log(timeBlocks);
 
 if (timeBlocks < currentHour) {
     console.log("true");
-} else { console.log("false")};
+} else { console.log("false") };
 
 if (hour8 < currentHour) {
-      console.log("true");
-} else { console.log("false")};
+    console.log("true");
+} else { console.log("false") };
 
 for (let i = 0; i < timeBlocks.length; i++) {
- console.log(timeBlocks[i]);
-    
+    console.log(timeBlocks[i]);
+
 }
 
 for (let i = 0; i < timeBlocks.length; i++) {
@@ -143,3 +132,6 @@ for (let i = 0; i < timeBlocks.length; i++) {
 };
 
 console.log(hours);
+
+// console.log("timeBlock: type", typeof (timeBlocks[i]))
+
