@@ -71,21 +71,22 @@ hour17];
 
 function timeUpdate() {
 for (let i = 0; i < timeBlocks.length; i++) {
+    console.log("timeBlock: type", typeof(timeBlocks[i]))
     if (timeBlocks[i] < currentHour) {
-        $(hours).addClass("past");
-        $(hours).removeClass("present");
-        $(hours).removeClass("future");
+        $(hours[i]).addClass("past");
+        $(hours[i]).removeClass("present");
+        $(hours[i]).removeClass("future");
         
     }
-    else if (timeBlocks[i] === currentHour) {
-        $(hours).removeClass("past");
-        $(hours).addClass("present");
-        $(hours).removeClass("future");
+    else if (timeBlocks[i] == currentHour) {
+        $(hours[i]).removeClass("past");
+        $(hours[i]).addClass("present");
+        $(hours[i]).removeClass("future");
     }
     else {
-        $(hours).removeClass("past");
-        $(hours).removeClass("present");
-        $(hours).addClass("future");
+        $(hours[i]).removeClass("past");
+        $(hours[i]).removeClass("present");
+        $(hours[i]).addClass("future");
     }}};
 timeUpdate();
 
