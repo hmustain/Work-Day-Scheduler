@@ -44,6 +44,7 @@ body {
   
   .past {
     background-color: #d3d3d3;
+    /* background-color: black; */
     color: white;
   }
   
@@ -57,16 +58,32 @@ body {
     color: white;
   }
   
-  .saveBtn {
+  #enter-btn, #erase-btn {
     border-left: 1px solid black;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background-color: #06aed5;
+    border-top-right-radius: 15%;
+    border-bottom-right-radius: 15%;
+    background-color: skyblue;
     color: white;
   }
   
-  .saveBtn i:hover {
+  #enter-btn:hover {
     font-size: 20px;
     transition: all 0.3s ease-in-out;
   }
-  
+
+  #erase-btn:hover {
+    font-size: 20px;
+    transition: all 0.3s ease-in-out
+  }
+
+  #enter-btn:active, #erase-btn:active {
+    transform: scale(0.90);
+  }
+
+  #header {
+    background-color: #343A40;
+    color: white;
+  }
+
+
+
