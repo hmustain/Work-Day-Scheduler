@@ -70,17 +70,52 @@ var timeBlocks = [hour8,
 // work on local storage.. looking at week 4 act 24
 var enterBtn = document.querySelector("#enter-btn");
 var eraseBtn = document.querySelector("#erase-btn");
-var hour8Input = document.querySelector("#hour-8");
 
-enterBtn.addEventListener("click", function(event) {
+var hour8Input = document.querySelector("#hour-8");
+var hour9Input = document.querySelector("#hour-9");
+var hour10Input = document.querySelector("#hour-10");
+var hour11Input = document.querySelector("#hour-11");
+var hour12Input = document.querySelector("#hour-12");
+var hour13Input = document.querySelector("#hour-13");
+var hour14Input = document.querySelector("#hour-14");
+var hour15Input = document.querySelector("#hour-15");
+var hour16Input = document.querySelector("#hour-16");
+var hour17Input = document.querySelector("#hour-17");
+
+var storedInputs = JSON.parse(localStorage.getItem("user input"));
+
+// Checking if user input in local storage
+// Then fill in tasks got help in office hours with this
+if (storedInputs) {
+    console.log('stored inputs:');
+    console.log(storedInputs);
+    hour8Input.value = storedInputs.eightam;
+}
+
+
+
+
+
+enterBtn.addEventListener("click", function (event) {
     event.preventDefault();
 
 
-var userInput = {
-    eightam: hour8Input.value.trim()
-};
+    var userInput = {
+        eightam: hour8Input.value.trim(),
+        nineam: hour9Input.value.trim(),
+        tenam: hour10Input.value.trim(),
+        elevenam: hour11Input.value.trim(),
+        twelvepm: hour12Input.value.trim(),
+        onepm: hour13Input.value.trim(),
+        twopm: hour14Input.value.trim(),
+        threepm: hour15Input.value.trim(),
+        fourpm: hour16Input.value.trim(),
+        fivepm: hour17Input.value.trim(),
+    };
 
-localStorage.setItem("user input", JSON.stringify(userInput))});
+    localStorage.setItem("user input", JSON.stringify(userInput))
+
+});
 
 // create for loop with if else statements inside using [i] to index through each line in the array
 
