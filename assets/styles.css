@@ -64,6 +64,8 @@ body {
     border-bottom-right-radius: 15%;
     background-color: skyblue;
     color: white;
+    padding-left: 1%;
+    padding-right: 1%;
   }
   
   #enter-btn:hover {

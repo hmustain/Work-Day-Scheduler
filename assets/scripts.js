@@ -68,7 +68,7 @@ var timeBlocks = [hour8,
     hour17];
 
 // work on local storage.. looking at week 4 act 24
-var enterBtn = document.querySelector("#enter-btn");
+var enterBtn = document.querySelectorAll(".entbtn");
 var eraseBtn = document.querySelector("#erase-btn");
 
 var hour8Input = document.querySelector("#hour-8");
@@ -101,14 +101,19 @@ if (storedInputs) {
     hour17Input.value = storedInputs.fivepm;
 }
 
+// ask bcs helped me here
+for (i of enterBtn) {
+    i.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log('clicked');
+        alert("Input added to local storage");
 
 
 
+// enterBtn.addEventListener("click", function (event) {
+//     event.preventDefault();
 
-enterBtn.addEventListener("click",  function (event) {
-    event.preventDefault();
-
-// try to do a for loop on this in the morning
+    // try to do a for loop on this in the morning
     var userInput = {
         eightam: hour8Input.value.trim(),
         nineam: hour9Input.value.trim(),
@@ -124,7 +129,7 @@ enterBtn.addEventListener("click",  function (event) {
 
     localStorage.setItem("user input", JSON.stringify(userInput))
 
-});
+})};
 
 // create for loop with if else statements inside using [i] to index through each line in the array
 
