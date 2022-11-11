@@ -90,16 +90,25 @@ if (storedInputs) {
     console.log('stored inputs:');
     console.log(storedInputs);
     hour8Input.value = storedInputs.eightam;
+    hour9Input.value = storedInputs.nineam;
+    hour10Input.value = storedInputs.tenam;
+    hour11Input.value = storedInputs.elevenam;
+    hour12Input.value = storedInputs.twelvepm;
+    hour13Input.value = storedInputs.onepm;
+    hour14Input.value = storedInputs.twopm;
+    hour15Input.value = storedInputs.threepm;
+    hour16Input.value = storedInputs.fourpm;
+    hour17Input.value = storedInputs.fivepm;
 }
 
 
 
 
 
-enterBtn.addEventListener("click", function (event) {
+enterBtn.addEventListener("click",  function (event) {
     event.preventDefault();
 
-
+// try to do a for loop on this in the morning
     var userInput = {
         eightam: hour8Input.value.trim(),
         nineam: hour9Input.value.trim(),
