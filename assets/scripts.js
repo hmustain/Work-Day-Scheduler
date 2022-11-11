@@ -67,6 +67,100 @@ var timeBlocks = [hour8,
     hour16,
     hour17];
 
+// work on local storage.. looking at week 4 act 24
+var enterBtn = document.querySelectorAll(".entbtn");
+var eraseBtn = document.querySelectorAll(".erabtn");
+
+var hour8Input = document.querySelector("#hour-8");
+var hour9Input = document.querySelector("#hour-9");
+var hour10Input = document.querySelector("#hour-10");
+var hour11Input = document.querySelector("#hour-11");
+var hour12Input = document.querySelector("#hour-12");
+var hour13Input = document.querySelector("#hour-13");
+var hour14Input = document.querySelector("#hour-14");
+var hour15Input = document.querySelector("#hour-15");
+var hour16Input = document.querySelector("#hour-16");
+var hour17Input = document.querySelector("#hour-17");
+
+var storedInputs = JSON.parse(localStorage.getItem("user input"));
+
+// Checking if user input in local storage
+// Then fill in tasks got help in office hours with this
+if (storedInputs) {
+    console.log('stored inputs:');
+    console.log(storedInputs);
+    hour8Input.value = storedInputs.eightam;
+    hour9Input.value = storedInputs.nineam;
+    hour10Input.value = storedInputs.tenam;
+    hour11Input.value = storedInputs.elevenam;
+    hour12Input.value = storedInputs.twelvepm;
+    hour13Input.value = storedInputs.onepm;
+    hour14Input.value = storedInputs.twopm;
+    hour15Input.value = storedInputs.threepm;
+    hour16Input.value = storedInputs.fourpm;
+    hour17Input.value = storedInputs.fivepm;
+}
+
+// ask bcs helped me here
+for (i of enterBtn) {
+    i.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log('clicked');
+        alert("Input added to local storage");
+
+
+
+// enterBtn.addEventListener("click", function (event) {
+//     event.preventDefault();
+
+    // try to do a for loop on this in the morning
+    var userInput = {
+        eightam: hour8Input.value.trim(),
+        nineam: hour9Input.value.trim(),
+        tenam: hour10Input.value.trim(),
+        elevenam: hour11Input.value.trim(),
+        twelvepm: hour12Input.value.trim(),
+        onepm: hour13Input.value.trim(),
+        twopm: hour14Input.value.trim(),
+        threepm: hour15Input.value.trim(),
+        fourpm: hour16Input.value.trim(),
+        fivepm: hour17Input.value.trim(),
+    };
+
+    localStorage.setItem("user input", JSON.stringify(userInput))
+
+})};
+
+for (i of eraseBtn) {
+    i.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log('clicked');
+        alert("Input removed from local storage");
+
+
+
+// enterBtn.addEventListener("click", function (event) {
+//     event.preventDefault();
+
+    // try to do a for loop on this in the morning
+    var userInput = {
+        eightam: hour8Input.value.trim(),
+        nineam: hour9Input.value.trim(),
+        tenam: hour10Input.value.trim(),
+        elevenam: hour11Input.value.trim(),
+        twelvepm: hour12Input.value.trim(),
+        onepm: hour13Input.value.trim(),
+        twopm: hour14Input.value.trim(),
+        threepm: hour15Input.value.trim(),
+        fourpm: hour16Input.value.trim(),
+        fivepm: hour17Input.value.trim(),
+    };
+
+    localStorage.clear("user input", JSON.stringify(userInput));
+    // userInput.textContent = "";
+
+})};
+
 // create for loop with if else statements inside using [i] to index through each line in the array
 
 function timeUpdate() {
