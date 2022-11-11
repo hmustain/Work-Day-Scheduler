@@ -156,7 +156,8 @@ for (i of eraseBtn) {
         fivepm: hour17Input.value.trim(),
     };
 
-    localStorage.clear("user input", JSON.stringify(userInput))
+    localStorage.clear("user input", JSON.stringify(userInput));
+    // userInput.textContent = "";
 
 })};
 
