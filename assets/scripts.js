@@ -69,7 +69,7 @@ var timeBlocks = [hour8,
 
 // work on local storage.. looking at week 4 act 24
 var enterBtn = document.querySelectorAll(".entbtn");
-var eraseBtn = document.querySelector("#erase-btn");
+var eraseBtn = document.querySelectorAll(".erabtn");
 
 var hour8Input = document.querySelector("#hour-8");
 var hour9Input = document.querySelector("#hour-9");
@@ -128,6 +128,35 @@ for (i of enterBtn) {
     };
 
     localStorage.setItem("user input", JSON.stringify(userInput))
+
+})};
+
+for (i of eraseBtn) {
+    i.addEventListener("click", function(event) {
+        event.preventDefault();
+        console.log('clicked');
+        alert("Input removed from local storage");
+
+
+
+// enterBtn.addEventListener("click", function (event) {
+//     event.preventDefault();
+
+    // try to do a for loop on this in the morning
+    var userInput = {
+        eightam: hour8Input.value.trim(),
+        nineam: hour9Input.value.trim(),
+        tenam: hour10Input.value.trim(),
+        elevenam: hour11Input.value.trim(),
+        twelvepm: hour12Input.value.trim(),
+        onepm: hour13Input.value.trim(),
+        twopm: hour14Input.value.trim(),
+        threepm: hour15Input.value.trim(),
+        fourpm: hour16Input.value.trim(),
+        fivepm: hour17Input.value.trim(),
+    };
+
+    localStorage.clear("user input", JSON.stringify(userInput))
 
 })};
 
