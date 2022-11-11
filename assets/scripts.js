@@ -138,26 +138,11 @@ for (i of eraseBtn) {
         alert("Input removed from local storage");
 
 
-
-// enterBtn.addEventListener("click", function (event) {
-//     event.preventDefault();
-
-    // try to do a for loop on this in the morning
-    var userInput = {
-        eightam: hour8Input.value.trim(),
-        nineam: hour9Input.value.trim(),
-        tenam: hour10Input.value.trim(),
-        elevenam: hour11Input.value.trim(),
-        twelvepm: hour12Input.value.trim(),
-        onepm: hour13Input.value.trim(),
-        twopm: hour14Input.value.trim(),
-        threepm: hour15Input.value.trim(),
-        fourpm: hour16Input.value.trim(),
-        fivepm: hour17Input.value.trim(),
-    };
-
     localStorage.clear("user input", JSON.stringify(userInput));
     // userInput.textContent = "";
+    if (localStorage.userInput.length === 0)
+    userInput.innerHTML = "";
+    console.log(localStorage.userInput.length);
 
 })};
 
