@@ -20,7 +20,7 @@ If the time is in the past, the block will be grey
 If the time is in the present, the block will be red
 If the time is in the future, the block will be green.
 To use, simply input your duties for that hour and select the green check.
-To remove input, slick the red x.
+To remove input, lick the red x.
 
 ![alt text](./assets/images/work-day-scheduler.png)
 
